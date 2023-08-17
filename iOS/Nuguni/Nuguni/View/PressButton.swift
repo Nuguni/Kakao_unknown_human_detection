@@ -8,18 +8,9 @@
 import UIKit
 
 class PressButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     override func layoutSubviews() {
         self.titleLabel?.font = .boldSystemFont(ofSize: 14)
-        
         self.backgroundColor = .systemGray6
         self.layer.cornerRadius = 40
         self.layer.shadowColor = UIColor.white.cgColor

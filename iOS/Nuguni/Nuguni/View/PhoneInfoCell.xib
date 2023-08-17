@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otx-T8-CMw">
-                        <rect key="frame" x="192" y="56.666666666666657" width="42" height="30"/>
+                        <rect key="frame" x="542" y="56.666666666666657" width="42" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="4la-iT-xA2"/>
                         </constraints>
@@ -38,7 +38,7 @@
                 <constraints>
                     <constraint firstItem="Xzg-W9-9TQ" firstAttribute="leading" secondItem="yy4-Vv-VOT" secondAttribute="leading" constant="20" id="YHq-d4-1nv"/>
                     <constraint firstItem="Xzg-W9-9TQ" firstAttribute="centerY" secondItem="yy4-Vv-VOT" secondAttribute="centerY" id="ccr-dK-c8r"/>
-                    <constraint firstItem="otx-T8-CMw" firstAttribute="leading" secondItem="Xzg-W9-9TQ" secondAttribute="trailing" constant="130" id="dku-az-0RS"/>
+                    <constraint firstAttribute="trailing" secondItem="otx-T8-CMw" secondAttribute="trailing" constant="20" id="mJ9-aJ-Ec7"/>
                     <constraint firstItem="otx-T8-CMw" firstAttribute="centerY" secondItem="yy4-Vv-VOT" secondAttribute="centerY" id="pUp-Wq-ORm"/>
                 </constraints>
             </collectionViewCellContentView>

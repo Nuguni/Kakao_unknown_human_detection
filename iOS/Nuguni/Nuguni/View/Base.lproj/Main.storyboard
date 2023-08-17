@@ -79,9 +79,9 @@
                                     <constraint firstAttribute="width" constant="90" id="ble-mx-cNR"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Verify"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Phone"/>
                                 <connections>
-                                    <action selector="tapVerifyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F20-De-Svd"/>
+                                    <action selector="tapPhoneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tDC-wo-ixc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mh7-UT-nCV">
@@ -96,6 +96,18 @@
                                     <action selector="tapRequestButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XIc-Ik-Y4b"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSO-9j-YuS">
+                                <rect key="frame" x="151.66666666666666" y="708" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="DxC-el-nEg"/>
+                                    <constraint firstAttribute="width" constant="90" id="Qrt-ry-ovs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Verify"/>
+                                <connections>
+                                    <action selector="tapVerifyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QsX-Qg-1Wj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BHa-Oe-yKJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -107,6 +119,7 @@
                             <constraint firstItem="BHa-Oe-yKJ" firstAttribute="trailing" secondItem="A3j-5e-SOX" secondAttribute="trailing" constant="30" id="9hO-21-tue"/>
                             <constraint firstItem="A3j-5e-SOX" firstAttribute="leading" secondItem="BHa-Oe-yKJ" secondAttribute="leading" constant="30" id="MbP-ZB-Nao"/>
                             <constraint firstItem="5so-II-reh" firstAttribute="top" secondItem="A3j-5e-SOX" secondAttribute="bottom" constant="10" id="OFc-fd-ddd"/>
+                            <constraint firstItem="BHa-Oe-yKJ" firstAttribute="bottom" secondItem="uSO-9j-YuS" secondAttribute="bottom" constant="20" id="OVh-SF-s0N"/>
                             <constraint firstItem="V4L-Cj-msQ" firstAttribute="top" secondItem="4mH-iV-1qH" secondAttribute="bottom" constant="20" id="Peo-JR-E7s"/>
                             <constraint firstItem="5so-II-reh" firstAttribute="leading" secondItem="BHa-Oe-yKJ" secondAttribute="leading" constant="30" id="Tda-6i-Few"/>
                             <constraint firstItem="4mH-iV-1qH" firstAttribute="leading" secondItem="BHa-Oe-yKJ" secondAttribute="leading" constant="30" id="WH6-RB-lpy"/>
@@ -118,6 +131,7 @@
                             <constraint firstItem="BHa-Oe-yKJ" firstAttribute="trailing" secondItem="5so-II-reh" secondAttribute="trailing" constant="30" id="hGo-1f-8jO"/>
                             <constraint firstItem="BHa-Oe-yKJ" firstAttribute="bottom" secondItem="Mh7-UT-nCV" secondAttribute="bottom" constant="20" id="mbg-AQ-9ao"/>
                             <constraint firstItem="V4L-Cj-msQ" firstAttribute="leading" secondItem="BHa-Oe-yKJ" secondAttribute="leading" constant="30" id="wRR-GO-G65"/>
+                            <constraint firstItem="uSO-9j-YuS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yBg-Cu-N6V"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -125,11 +139,12 @@
                     <connections>
                         <outlet property="kakaoCollectionView" destination="SLC-qk-Cmd" id="1Yo-Nl-Zh9"/>
                         <outlet property="kakaoLabel" destination="V4L-Cj-msQ" id="Gqp-lT-rCg"/>
+                        <outlet property="phoneButton" destination="EYU-n9-O79" id="hXH-Ud-Qxl"/>
                         <outlet property="phoneCollectionView" destination="5so-II-reh" id="tcj-z2-hBT"/>
                         <outlet property="phoneLabel" destination="A3j-5e-SOX" id="X9w-jK-tbg"/>
                         <outlet property="requestButton" destination="Mh7-UT-nCV" id="i19-gC-0qg"/>
                         <outlet property="titleLabel" destination="4mH-iV-1qH" id="lNU-kW-aHz"/>
-                        <outlet property="verifyButton" destination="EYU-n9-O79" id="EZZ-bV-ncI"/>
+                        <outlet property="verifyButton" destination="uSO-9j-YuS" id="seM-w1-CNs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
