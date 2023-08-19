@@ -3,11 +3,16 @@ package bob.nuguni.domain;
 public class KakaoProfile {
 
     private long id;
+    private String uuid;
     private String name;
+    private String profile_thumbnail_image;
 
-    public KakaoProfile(long id, String name) {
+
+    public KakaoProfile(long id, String uuid, String name, String profile_thumbnail_image) {
         this.id = id;
+        this.uuid=uuid;
         this.name = name;
+        this.profile_thumbnail_image=profile_thumbnail_image;
     }
 
     public long getId() {
