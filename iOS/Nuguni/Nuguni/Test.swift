@@ -12,9 +12,9 @@ struct Test {
     let personName: String
 }
 
-struct Test2 {
-    let personNumber: String
-    let personName: String
+struct Test2: Encodable{
+    let phoneNumber: String
+    let name: String
 }
 
 extension Test {

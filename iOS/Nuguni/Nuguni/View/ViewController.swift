@@ -29,7 +29,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapVerifyButton(_ sender: UIButton) {
-        self.existingDifferentNameAlert()
+        self.sendPostRequest()
+        print("🤪")
     }
     
     @IBAction func tapPhoneButton(_ sender: UIButton) {
@@ -48,10 +49,49 @@ class ViewController: UIViewController {
         }
     }
     
-//    let testList2 = Test2.data
     var phoneBook: [Test2] = [] {
         didSet {
             phoneCollectionView.reloadData()
+        }
+    }
+    
+    func sendPostRequest() {
+        // URI 설정
+        let urlString = "http://169.254.202.171:8080/contacts"
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
+        
+        // 요청 데이터 생성
+        let requestData: [Test2] = phoneBook
+        
+        do {
+            let jsonData = try JSONEncoder().encode(requestData)
+            
+            // URLRequest 생성
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = jsonData
+            
+            // URLSession을 이용하여 요청 보내기
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    print("Error: \(error)")
+                    return
+                }
+                
+                if let data = data {
+                    // 응답 데이터 처리
+                    if let responseString = String(data: data, encoding: .utf8) {
+                        print("Response: \(responseString)")
+                    }
+                }
+            }
+            task.resume()
+        } catch {
+            print("JSON Serialization Error: \(error)")
         }
     }
     
@@ -92,16 +132,14 @@ class ViewController: UIViewController {
                 if contact.phoneNumbers.isEmpty == false {
                     let name = contact.familyName + contact.givenName
                     let phone = contact.phoneNumbers[0].value.value(forKey: "digits") ?? ""
-                    let tmpPhone = Test2(personNumber: phone as! String, personName: name)
+                    let tmpPhone = Test2(phoneNumber: phone as! String, name: name)
                     
                     Task {
                         await self.phoneBook.append(tmpPhone)
                     }
                 }
             })
-            
         }
-        
     }
     
     private func getCNContactFetchRequest() -> CNContactFetchRequest {
@@ -115,8 +153,7 @@ class ViewController: UIViewController {
 //                                       CNContactPostalAddressesKey
         ] as [Any] as! [CNKeyDescriptor]
         return CNContactFetchRequest(keysToFetch: keys)
-        }
-    
+    }
     
     private func layout() {
         
@@ -187,7 +224,7 @@ class ViewController: UIViewController {
     }
     
     private func existingDifferentNameAlert() {
-        let alert = UIAlertController(title: "Verify Result", message: "There are 5 unrecognized IDs", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Verify Result", message: "There are xx unrecognized IDs", preferredStyle: .alert)
         let confirm = UIAlertAction(title: "Confirm", style: .default) { _ in
             self.dismiss(animated: true)
         }
@@ -225,8 +262,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
             cell.layer.cornerRadius = 20
             let target = phoneBook[indexPath.row]
             
-            cell.phoneName?.text = target.personName
-            cell.phoneNumber?.text = target.personNumber
+            cell.phoneName?.text = target.name
+            cell.phoneNumber?.text = target.phoneNumber
             return cell
         }
     }
