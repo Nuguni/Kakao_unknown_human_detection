@@ -11,4 +11,5 @@ public interface KakaoPhoneRepository {
     List<PhoneContact> getContacts();
 
 
+    List<PhoneContact> getContacts(List<PhoneContact> inputList);
 }
