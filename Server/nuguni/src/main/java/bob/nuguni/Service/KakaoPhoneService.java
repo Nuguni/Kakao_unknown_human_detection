@@ -1,6 +1,8 @@
 package bob.nuguni.Service;
 
 import bob.nuguni.Repo.KakaoPhoneRepository;
+//import bob.nuguni.domain.KakaoProfile;
+//import bob.nuguni.domain.PhoneContact;
 import bob.nuguni.domain.KakaoProfile;
 import bob.nuguni.domain.PhoneContact;
 import org.springframework.beans.factory.annotation.Autowired;

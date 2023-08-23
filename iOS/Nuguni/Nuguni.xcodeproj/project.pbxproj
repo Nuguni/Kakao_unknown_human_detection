@@ -326,6 +326,7 @@
 				DEVELOPMENT_TEAM = V8U96P27D9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuguni/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Require Access Permission to Address. Please tap Phone Button again.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -354,6 +355,7 @@
 				DEVELOPMENT_TEAM = V8U96P27D9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nuguni/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Require Access Permission to Address. Please tap Phone Button again.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
